@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35521.163 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartEvent.API", "SmartEvent.API\SmartEvent.API.csproj", "{EDAE85BE-5D93-4533-8440-5E00E11CE6B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartEvent.Core", "SmartEvent.Core\SmartEvent.Core.csproj", "{7156CE90-BB2A-401F-88E5-49E814DBF858}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartEvent.Data", "SmartEvent.Data\SmartEvent.Data.csproj", "{214C9EC8-058A-412F-8418-A895B4BD8E8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartEvent.Services", "SmartEvent.Services\SmartEvent.Services.csproj", "{B09DEDAF-546E-44FF-8787-ABA665A92CDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartEvent.RegistrationService", "SmartEvent.RegistrationService\SmartEvent.RegistrationService.csproj", "{03205AA4-1659-4424-96A9-4C0C5C606995}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDAE85BE-5D93-4533-8440-5E00E11CE6B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDAE85BE-5D93-4533-8440-5E00E11CE6B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDAE85BE-5D93-4533-8440-5E00E11CE6B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDAE85BE-5D93-4533-8440-5E00E11CE6B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7156CE90-BB2A-401F-88E5-49E814DBF858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7156CE90-BB2A-401F-88E5-49E814DBF858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7156CE90-BB2A-401F-88E5-49E814DBF858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7156CE90-BB2A-401F-88E5-49E814DBF858}.Release|Any CPU.Build.0 = Release|Any CPU
+		{214C9EC8-058A-412F-8418-A895B4BD8E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{214C9EC8-058A-412F-8418-A895B4BD8E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{214C9EC8-058A-412F-8418-A895B4BD8E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{214C9EC8-058A-412F-8418-A895B4BD8E8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B09DEDAF-546E-44FF-8787-ABA665A92CDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B09DEDAF-546E-44FF-8787-ABA665A92CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B09DEDAF-546E-44FF-8787-ABA665A92CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B09DEDAF-546E-44FF-8787-ABA665A92CDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03205AA4-1659-4424-96A9-4C0C5C606995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03205AA4-1659-4424-96A9-4C0C5C606995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03205AA4-1659-4424-96A9-4C0C5C606995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03205AA4-1659-4424-96A9-4C0C5C606995}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

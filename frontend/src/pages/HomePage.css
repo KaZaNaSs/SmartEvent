@@ -1,0 +1,347 @@
+/* HomePage.css avec image de fond */
+
+/* Importation de polices */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Animations et effets globaux */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+/* Image de fond d'écran */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.min-h-screen {
+  background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+  animation: zoomBackground 30s ease-in-out infinite alternate;
+}
+
+/* Overlay pour améliorer la lisibilité */
+.min-h-screen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.85) 0%, rgba(59, 130, 246, 0.75) 100%);
+  z-index: 0;
+  backdrop-filter: blur(2px);
+}
+
+/* Animation de zoom pour le fond */
+@keyframes zoomBackground {
+  0% {
+    background-size: 100% auto;
+  }
+  100% {
+    background-size: 110% auto;
+  }
+}
+
+/* Ajustement du contenu pour qu'il soit au-dessus de l'overlay */
+.min-h-screen > div {
+  position: relative;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Amélioration de la carte */
+.rounded-2xl {
+  animation: fadeIn 0.8s ease-out forwards;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.rounded-2xl::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  transform: rotate(45deg);
+  animation: shine 6s infinite;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  0% {
+    top: -100%;
+    left: -100%;
+  }
+  100% {
+    top: 100%;
+    left: 100%;
+  }
+}
+
+.shadow-xl {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.rounded-2xl:hover {
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3),
+    0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+/* Amélioration du titre */
+.text-4xl {
+  animation: fadeIn 0.6s ease-out forwards;
+  background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.5px;
+}
+
+/* Amélioration du paragraphe */
+.text-xl {
+  animation: fadeIn 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+  line-height: 1.6;
+}
+
+/* Amélioration des boutons */
+.flex-col {
+  animation: fadeIn 1s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+/* Bouton Voir les événements */
+a[to="/events"] {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease !important;
+  background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%) !important;
+  border: none;
+  z-index: 1;
+}
+
+a[to="/events"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(37, 99, 235, 0.3) !important;
+  background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%) !important;
+}
+
+a[to="/events"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0)
+  );
+  transition: left 0.7s ease;
+  z-index: -1;
+}
+
+a[to="/events"]:hover::before {
+  left: 100%;
+}
+
+a[to="/events"]:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.3) !important;
+}
+
+/* Bouton Espace admin */
+a[to="/admin"] {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease !important;
+  background: linear-gradient(90deg, #e5e7eb 0%, #f3f4f6 100%) !important;
+  border: none;
+  z-index: 1;
+}
+
+a[to="/admin"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(107, 114, 128, 0.2) !important;
+  background: linear-gradient(90deg, #d1d5db 0%, #e5e7eb 100%) !important;
+}
+
+a[to="/admin"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
+  transition: left 0.7s ease;
+  z-index: -1;
+}
+
+a[to="/admin"]:hover::before {
+  left: 100%;
+}
+
+a[to="/admin"]:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(107, 114, 128, 0.2) !important;
+}
+
+/* Responsive design amélioré */
+@media (max-width: 640px) {
+  .text-4xl {
+    font-size: 2rem;
+  }
+  
+  .text-xl {
+    font-size: 1.1rem;
+  }
+  
+  .p-8 {
+    padding: 1.5rem;
+  }
+  
+  a[to="/events"],
+  a[to="/admin"] {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Effet de focus amélioré pour l'accessibilité */
+a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5) !important;
+}
+
+/* Styles pour le copyright */
+.copyright-section {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.2s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.copyright-text {
+  font-size: 0.85rem;
+  color: #64748b;
+  transition: all 0.3s ease;
+}
+
+.copyright-text:hover {
+  color: #475569;
+}
+
+/* Animation pour le copyright */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive pour le copyright */
+@media (max-width: 640px) {
+  .copyright-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+  }
+  
+  .copyright-text {
+    font-size: 0.75rem;
+  }
+}
+
+/* Effet de particules flottantes */
+.min-h-screen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 0.1%, transparent 0.2%),
+    radial-gradient(circle at 50% 70%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 0.1%, transparent 0.2%),
+    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 0.1%, transparent 0.2%),
+    radial-gradient(circle at 10% 90%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 0.1%, transparent 0.2%),
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 0.1%, transparent 0.2%),
+    radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 0.1%, transparent 0.2%),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 0.1%, transparent 0.2%);
+  background-size: 100% 100%;
+  pointer-events: none;
+  z-index: 1;
+  animation: floatingParticles 15s linear infinite;
+}
+
+@keyframes floatingParticles {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}

@@ -1,0 +1,315 @@
+/* AdminAddEvent.css */
+
+/* Importation de polices */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+/* Variables */
+:root {
+  --primary: #8e44ad;
+  --secondary: #3498db;
+  --success: #27ae60;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+  --light: #ecf0f1;
+  --dark: #2c3e50;
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Styles de base */
+.container.mt-4 {
+  font-family: 'Quicksand', sans-serif;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 20px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Effet de fond */
+.container.mt-4::before {
+  content: "📅";
+  position: absolute;
+  font-size: 15rem;
+  opacity: 0.03;
+  top: -50px;
+  right: -50px;
+  transform: rotate(15deg);
+  z-index: 0;
+}
+
+.container.mt-4::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(142, 68, 173, 0.2) 0%, rgba(142, 68, 173, 0) 70%);
+  bottom: -100px;
+  left: -100px;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* Titre */
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--dark);
+  position: relative;
+  z-index: 1;
+  transform: translateZ(30px);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.container.mt-4:hover h2::after {
+  width: 120px;
+}
+
+/* Formulaire */
+form {
+  position: relative;
+  z-index: 1;
+  transform: translateZ(10px);
+}
+
+.mb-3 {
+  margin-bottom: 1.8rem !important;
+  position: relative;
+  transition: var(--transition);
+}
+
+.mb-3:hover {
+  transform: translateX(5px);
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 1.1rem;
+  transition: var(--transition);
+  transform-origin: left;
+}
+
+.mb-3:focus-within label {
+  color: var(--primary);
+  transform: scale(1.05);
+}
+
+/* Champs de saisie */
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  transition: var(--transition);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+  font-family: 'Quicksand', sans-serif;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: white;
+  box-shadow: 
+    0 10px 20px rgba(142, 68, 173, 0.1),
+    0 0 0 4px rgba(142, 68, 173, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Textarea */
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Bouton */
+.btn.btn-success {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border: none;
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 10px 20px rgba(142, 68, 173, 0.2);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
+
+.btn.btn-success::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(45deg, var(--secondary), var(--primary));
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.btn.btn-success:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(142, 68, 173, 0.3);
+}
+
+.btn.btn-success:hover::before {
+  width: 100%;
+}
+
+.btn.btn-success:active {
+  transform: translateY(-2px);
+}
+
+/* Message d'alerte */
+.alert.alert-info {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  color: var(--primary);
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  animation: slideIn 0.5s forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.alert.alert-info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+  border-radius: 2px 0 0 2px;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* Animation au chargement */
+.container.mt-4 {
+  animation: slideIn 0.8s forwards;
+}
+
+/* Effet de flottement sur le conteneur */
+.container.mt-4:hover {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container.mt-4 {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .form-control {
+    padding: 0.7rem 1rem;
+  }
+  
+  .btn.btn-success {
+    width: 100%;
+    padding: 0.7rem;
+  }
+}
+
+/* Effet de focus sur le formulaire entier */
+form:focus-within {
+  transform: translateZ(20px);
+}
+
+/* Effet de survol sur les champs */
+.form-control:hover {
+  background-color: white;
+}
+
+/* Effet spécial pour le champ de date */
+input[type="date"] {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: hue-rotate(240deg) brightness(1.2);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  transform: scale(1.2);
+}
+
+/* Effet de validation */
+.form-control:valid {
+  border-right: 4px solid var(--success);
+}
+
+/* Effet d'erreur */
+.form-control:invalid:not(:placeholder-shown) {
+  border-right: 4px solid var(--danger);
+}
+
+/* Effet de focus global */
+.container.mt-4:focus-within {
+  box-shadow: 
+    0 25px 70px rgba(142, 68, 173, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+}
